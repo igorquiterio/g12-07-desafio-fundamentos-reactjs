@@ -1,7 +1,12 @@
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 interface ContainerProps {
   size?: 'small' | 'large';
+}
+
+interface ChangerProps {
+  activeItem: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -32,5 +37,16 @@ export const Container = styled.div<ContainerProps>`
         }
       }
     }
+  }
+`;
+
+export const StyledLink = styled(Link)`
+  color: palevioletred;
+  display: block;
+  margin: 0.5em 0;
+  font-family: Helvetica, Arial, sans-serif;
+
+  &[data-active] {
+    color: red;
   }
 `;
