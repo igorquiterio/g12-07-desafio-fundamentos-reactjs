@@ -5,8 +5,8 @@ interface ContainerProps {
   size?: 'small' | 'large';
 }
 
-interface ChangerProps {
-  activeItem: boolean;
+interface LinkProps {
+  active: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -20,33 +20,22 @@ export const Container = styled.div<ContainerProps>`
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    nav {
-      a {
-        color: #fff;
-        text-decoration: none;
-        font-size: 16px;
-        transition: opacity 0.2s;
-
-        & + a {
-          margin-left: 32px;
-        }
-
-        &:hover {
-          opacity: 0.6;
-        }
-      }
-    }
   }
 `;
 
-export const StyledLink = styled(Link)`
-  color: palevioletred;
-  display: block;
-  margin: 0.5em 0;
-  font-family: Helvetica, Arial, sans-serif;
+export const StyledLink = styled(Link)<LinkProps>`
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: opacity 0.2s;
 
-  &[data-active] {
-    color: red;
+  & + a {
+    margin-left: 32px;
   }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  ${({ active }) => (active ? 'border-bottom: 5px solid red;' : '')}
 `;
