@@ -6,7 +6,7 @@ interface ContainerProps {
 }
 
 interface LinkProps {
-  active: boolean;
+  selected: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -37,5 +37,6 @@ export const StyledLink = styled(Link)<LinkProps>`
     opacity: 0.6;
   }
 
-  ${({ active }) => (active ? 'border-bottom: 5px solid red;' : '')}
+  ${({ selected }) =>
+    selected ? 'border-bottom: 2px solid #FF872C;padding-bottom: 10px;' : ''}
 `;
