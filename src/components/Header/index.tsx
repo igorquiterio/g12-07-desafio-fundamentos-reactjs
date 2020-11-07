@@ -26,7 +26,7 @@ const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
           </StyledLink>
           <StyledLink
             selected={location.pathname === '/import'}
-            key="listagem"
+            key="import"
             to="/import"
           >
             Importar
